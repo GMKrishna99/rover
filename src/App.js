@@ -27,6 +27,13 @@ import GroceryDetail from "./components/grocery/GroceryDetail";
 import GoldList from './Gold/Goldlist';
 import GoldDetails from './Gold/GoldDetails';
 import GoldHome from './components/Home/GoldHome';
+import CementListPage from './components/Pages/cementList';
+import CementDetailsPage from './components/Pages/cementDetailsPage';
+import BrickListPage from './components/Pages/bricksList';
+import SandListPage from './components/Pages/sandList';
+import BricksDetailsPage from './components/Pages/bricksdetails';
+import SandDetailsPage from './components/Pages/sandDetails';
+import ConstractionHome from '../src/components/constructionHome/Home'
 
 const ScrollToTop = () => {
   const location = useLocation();
@@ -108,6 +115,16 @@ function App() {
 <Route exact path="/gold" element={<GoldHome onAddToCart={handleAddToCart}/>} />
 <Route path="/gold-list" element={<GoldList />} />
  <Route path="/gold/:goldId" element={<GoldDetails onAddToCart={handleAddToCart}/>} />
+<Route path="/constractionHome" element={<ConstractionHome />} />
+         <Route path="/construction-material/cement" element={<CementListPage />} />
+         <Route path="/construction-material/bricks" element={<BrickListPage />} />
+         <Route path="/bricks/:id" element={<BricksDetailsPage />} />
+         <Route path="/profile/orderHistory" element={<OrderHistory  />} />
+         <Route path="/profile" element={<Profile />} />
+         <Route path="/product-list/sand" element={<SandListPage />} />
+         <Route path="/sand/:id" element={<SandDetailsPage />} />
+         <Route path="/category/:gender/:type/:subtype" element={<NavbarCategory />} />  
+         <Route path="/cement/:id" element={<CementDetailsPage />} />
         </Routes>
         <Footer />
       </Router>
