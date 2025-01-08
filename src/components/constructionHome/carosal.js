@@ -2,7 +2,7 @@
 import React from 'react';
 import "react-responsive-carousel/lib/styles/carousel.min.css"; 
 import { Carousel } from 'react-responsive-carousel';
-import banner_1 from "../../assets/images/BaneerImages/bulinding.jpg";
+import banner_1 from "../../assets/images/BaneerImages/banner_building_material_web.png";
 
 const BannerCarousel = () => {
   return (
