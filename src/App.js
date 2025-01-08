@@ -21,6 +21,9 @@ import OrderHistory from "./Component/OrderHistory";
 import Register from "./Component/Register";
 import NavbarCategory from "./components/Navbar/navbarcategories";
 import Profile from "./components/Order/profile";
+import GroceryPage from "./components/grocery/index"; // Make sure the path is correct
+import Clothing from "./components/clothing/Clothing/Clothing";
+import GroceryDetail from "./components/grocery/GroceryDetail";
 
 const ScrollToTop = () => {
   const location = useLocation();
@@ -63,19 +66,16 @@ function App() {
         <ScrollToTop />
         <Navbar cartItems={cartItems} />
         <Routes>
+          <Route path="/" element={<Home />} />
           <Route
             exact
             path="/"
             element={<Home onAddToCart={handleAddToCart} />}
           />
-          <Route
-            exact
-            path="/home"
-            element={<Home onAddToCart={handleAddToCart} />}
-          />
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
           <Route path="/profile" element={<Profile />} />
+          <Route path="/clothing" element={<Clothing />} />
 
           <Route
             path="/product/:productId"
@@ -100,6 +100,8 @@ function App() {
             path="/category/:gender/:type/:subtype"
             element={<NavbarCategory />}
           />
+          <Route path="/groceries" element={<GroceryPage />} />
+          <Route path="/groceries/:id" element={<GroceryDetail />} />
         </Routes>
         <Footer />
       </Router>
