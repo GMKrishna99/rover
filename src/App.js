@@ -115,8 +115,8 @@ function App() {
 <Route exact path="/gold" element={<GoldHome onAddToCart={handleAddToCart}/>} />
 <Route path="/gold-list" element={<GoldList />} />
  <Route path="/gold/:goldId" element={<GoldDetails onAddToCart={handleAddToCart}/>} />
-<Route path="/constractionHome" element={<ConstractionHome />} />
-         <Route path="/construction-material" element={<CementListPage />} />
+<Route path="/construction-material" element={<ConstractionHome />} />
+         <Route path="/construction-material/cement" element={<CementListPage />} />
          <Route path="/construction-material/bricks" element={<BrickListPage />} />
          <Route path="/bricks/:id" element={<BricksDetailsPage />} />
          <Route path="/profile/orderHistory" element={<OrderHistory  />} />
