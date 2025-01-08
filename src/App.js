@@ -112,19 +112,19 @@ function App() {
           />
           <Route path="/groceries" element={<GroceryPage />} />
           <Route path="/groceries/:id" element={<GroceryDetail />} />
-<Route exact path="/gold" element={<GoldHome onAddToCart={handleAddToCart}/>} />
-<Route path="/gold-list" element={<GoldList />} />
- <Route path="/gold/:goldId" element={<GoldDetails onAddToCart={handleAddToCart}/>} />
-<Route path="/construction-material" element={<ConstractionHome />} />
-         <Route path="/construction-material/cement" element={<CementListPage />} />
-         <Route path="/construction-material/bricks" element={<BrickListPage />} />
-         <Route path="/bricks/:id" element={<BricksDetailsPage />} />
-         <Route path="/profile/orderHistory" element={<OrderHistory  />} />
-         <Route path="/profile" element={<Profile />} />
-         <Route path="/product-list/sand" element={<SandListPage />} />
-         <Route path="/sand/:id" element={<SandDetailsPage />} />
-         <Route path="/category/:gender/:type/:subtype" element={<NavbarCategory />} />  
-         <Route path="/cement/:id" element={<CementDetailsPage />} />
+          <Route exact path="/gold" element={<GoldHome onAddToCart={handleAddToCart} />} />
+          <Route path="/gold-list" element={<GoldList />} />
+          <Route path="/gold/:goldId" element={<GoldDetails onAddToCart={handleAddToCart} />} />
+          <Route path="/construction-material" element={<ConstractionHome />} />
+          <Route path="/product-list/cement" element={<CementListPage />} />
+          <Route path="/product-list/bricks" element={<BrickListPage />} />
+          <Route path="/bricks/:id" element={<BricksDetailsPage />} />
+          <Route path="/profile/orderHistory" element={<OrderHistory />} />
+          <Route path="/profile" element={<Profile />} />
+          <Route path="/product-list/sand" element={<SandListPage />} />
+          <Route path="/sand/:id" element={<SandDetailsPage />} />
+          <Route path="/category/:gender/:type/:subtype" element={<NavbarCategory />} />
+          <Route path="/cement/:id" element={<CementDetailsPage />} />
         </Routes>
         <Footer />
       </Router>
