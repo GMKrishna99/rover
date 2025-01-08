@@ -1,4 +1,3 @@
-
 import React, { useContext, useEffect, useState } from "react";
 import { FaTimes } from "react-icons/fa";
 import { FaBarsStaggered } from "react-icons/fa6";
@@ -104,7 +103,6 @@ const Navbar = () => {
                 {cartItems.length}
               </span>
             </div>
-            
           </li>
           <li className="nav-item w-full ml-6 mr-6" style={{ width: "200px" }}>
             <div onClick={openLoginModal}>
