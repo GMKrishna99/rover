@@ -43,40 +43,40 @@ const Login = ({ onClose }) => {
     return valid;
   };
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
+  // const handleSubmit = async (e) => {
+  //   e.preventDefault();
 
-    if (!validateForm()) {
-      return;
-    }
+  //   if (!validateForm()) {
+  //     return;
+  //   }
 
-    try {
-      const response = await fetch('https://ecommerce-backend-5vf7.onrender.com/api/customerLogin', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(formData),
-      });
+  //   try {
+  //     const response = await fetch('https://ecommerce-backend-5vf7.onrender.com/api/customerLogin', {
+  //       method: 'POST',
+  //       headers: {
+  //         'Content-Type': 'application/json',
+  //       },
+  //       body: JSON.stringify(formData),
+  //     });
 
-      if (response.ok) {
-        const data = await response.json();
-        console.log('Login successful:', data);
-        // Handle successful login (e.g., store tokens, etc.)
+  //     if (response.ok) {
+  //       const data = await response.json();
+  //       console.log('Login successful:', data);
+  //       // Handle successful login (e.g., store tokens, etc.)
         
-        navigate('/home'); // Navigate to the home page
-        onClose();
-        localStorage.setItem('jwtToken', data.token);
-      } else {
-        console.error('Login failed');
-        setLoginError('Please check your email and password.');
-      }
-    } catch (error) {
-      console.error('An error occurred:', error);
-      setLoginError('An error occurred. Please try again later.');
-    }
+  //       navigate('/home'); // Navigate to the home page
+  //       onClose();
+  //       localStorage.setItem('jwtToken', data.token);
+  //     } else {
+  //       console.error('Login failed');
+  //       setLoginError('Please check your email and password.');
+  //     }
+  //   } catch (error) {
+  //     console.error('An error occurred:', error);
+  //     setLoginError('An error occurred. Please try again later.');
+  //   }
 
-  };
+  // };
 
   return (
     <div>
@@ -102,7 +102,7 @@ const Login = ({ onClose }) => {
           >
             <h2 className="text-2xl font-bold text-white text-center py-8">Login</h2>
           </div>
-          <form className="mt-6" onSubmit={handleSubmit}>
+          <form className="mt-6">
             <div className="mb-4">
               <label className="block text-gray-700 mb-2" htmlFor="email">
                 Email
