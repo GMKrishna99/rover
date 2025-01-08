@@ -9,7 +9,7 @@ import {
 } from "react-icons/fa";
 import { IoLogoYoutube } from "react-icons/io5";
 import { Link } from "react-router-dom";
-import Logo from "../../assets/logo/shared image.jpg";
+import Logo from "../../assets/logo.jpg";
 import Logo_google from "../../assets/logo/google_appstore.png";
 import "./index.css";
 
@@ -41,11 +41,17 @@ const Footer = () => {
             <img src={Logo} alt="logo" className="logo_img" />
           </Link> */}
           <Link to="/">
-  <img src={Logo} alt="logo" className="w-24 h-auto md:w-32 lg:w-40" />
-</Link>
+            <img
+              src={Logo}
+              alt="logo"
+              className="w-24 h-auto md:w-32 lg:w-40"
+            />
+          </Link>
 
           <p>
-          Discover a Different Kind of Shopping Experience at Redtortue. We offer unique products you won't find anywhere else, along with exceptional customer service.
+            Discover a Different Kind of Shopping Experience at Redtortue. We
+            offer unique products you won't find anywhere else, along with
+            exceptional customer service.
           </p>
           <div className="footer-social-links">
             <a
@@ -102,7 +108,7 @@ const Footer = () => {
         </div>
 
         <div className="footer-company">
-           <h1>  </h1>
+          <h1> </h1>
           <Link to="#">
             <p onClick={handleScrollToTop}>Our Products</p>
           </Link>
@@ -122,8 +128,7 @@ const Footer = () => {
             <p onClick={handleScrollToTop}> Privacy Policy</p>
           </Link>
         </div>
-    
-       
+
         <div className="footer-support">
           <h1>SUPPORT</h1>
           <a href={`mailto:${companyMailId}`}>support@redtortue.com</a>
@@ -136,8 +141,7 @@ const Footer = () => {
             301/302, 3rd Floor, Saket Callipolis,
             <br />
             Vanasthali Puram,
-            <br />
-            L B Nagar, Hyderabad, Telangana
+            <br />L B Nagar, Hyderabad, Telangana
           </address>
         </div>
         <button className="arrow-up" onClick={handleScrollToTop}>
