@@ -23,7 +23,7 @@ import { Link, useNavigate } from "react-router-dom";
 
 import { BsCart3 } from "react-icons/bs";
 
-const currencies = ["CAD", "USD", "AUD", "EUR", "GBP"];
+const currencies = ["INR", "USD", "AUD", "EUR", "GBP"];
 const Categories = [
   { name: "Clothing", href: "/clothing" },
   { name: "Construction Material", href: "/construction-material" },
@@ -73,7 +73,7 @@ export default function Example() {
     };
   }, []);
   return (
-    <div className="bg-white">
+    <div className="bg-white z-40">
       {/* Mobile menu */}
       <Dialog open={open} onClose={setOpen} className="relative z-40 lg:hidden">
         <DialogBackdrop
@@ -198,7 +198,7 @@ export default function Example() {
               </form>
 
               <p className="flex-1 text-center text-sm font-medium text-white lg:flex-none">
-                Get free delivery on orders over $100
+                Get free delivery on orders over ₹1000
               </p>
 
               <div className="hidden lg:flex lg:flex-1 lg:items-center lg:justify-end lg:space-x-6">
@@ -226,9 +226,9 @@ export default function Example() {
 
           {/* Secondary navigation */}
           <div className="bg-white">
-            <div className="mx-auto max-w-10x1 px-8 sm:px-6 lg:px-8">
+            <div className="mx-auto max-w-10xl px-8 sm:px-6 lg:px-8">
               <div className="border-b border-gray-200">
-                <div className="flex h-20 items-center">
+                <div className="flex items-center justify-between h-20">
                   {/* Logo (lg+) */}
                   <div className="hidden lg:flex lg:items-center">
                     <a href="/">
@@ -236,7 +236,13 @@ export default function Example() {
                       <img alt="" src={Logo} className="h-20 w-full" />
                     </a>
                   </div>
-                  <div className="flex items-center gap-6 ml-10 font-medium text-lg">
+                  {/* Logo (lg-) */}
+                  <a href="#" className="lg:hidden">
+                    <span className="sr-only">Your Company</span>
+                    <img alt="" src={Logo} className="h-12 w-18" /> {/* Smaller logo for mobile */}
+                  </a>
+
+                  <div className="flex items-center gap-6 ml-10 font-medium text-lg hidden lg:flex">
                     {Categories.map((link) => (
                       <a
                         key={link.name}
@@ -247,8 +253,9 @@ export default function Example() {
                       </a>
                     ))}
                   </div>
+
                   {/* Mobile menu and search (lg-) */}
-                  <div className="flex flex-1 items-center lg:hidden">
+                  <div className="flex items-center lg:hidden">
                     <button
                       type="button"
                       onClick={() => setOpen(true)}
@@ -259,88 +266,54 @@ export default function Example() {
                     </button>
 
                     {/* Search */}
-                    <a
-                      href="#"
-                      className="ml-2 p-2 text-gray-400 hover:text-gray-500"
-                    >
+                    <a href="#" className="ml-2 p-2 text-gray-400 hover:text-gray-500">
                       <span className="sr-only">Search</span>
-                      <MagnifyingGlassIcon
-                        aria-hidden="true"
-                        className="h-10 w-10"
-                      />
+                      <MagnifyingGlassIcon aria-hidden="true" className="h-10 w-10" />
                     </a>
                   </div>
-                  {/* Logo (lg-) */}
-                  <a href="#" className="lg:hidden">
-                    <span className="sr-only">Your Company</span>
-                    <img alt="" src={Logo} className="h-14 w-22" />
-                  </a>
-                  <div className="flex flex-1 items-center justify-end">
-                    <div className="flex items-center lg:ml-8">
-                      <div className="flex space-x-8">
-                        <div className="flex">
-                          <a
-                            href="/profile"
-                            className="-m-2 p-2 text-gray-400 hover:text-gray-500"
-                          >
-                            <span className="sr-only">Account</span>
-                            <UserIcon aria-hidden="true" className="h-6 w-6" />
-                          </a>
-                        </div>
-                      </div>
+                </div>
 
-                      <span
-                        aria-hidden="true"
-                        className="mx-4 h-6 w-px bg-gray-200 lg:mx-6"
-                      />
-
-                      <ul
-                        className={`lg:flex lg:items-center lg:gap-6 ${
-                          clicked ? "flex flex-col items-center" : "hidden"
-                        } lg:flex-row lg:static absolute w-full lg:w-auto left-0 lg:left-auto bg-white lg:bg-transparent top-16 lg:top-auto py-4 lg:py-0`}
-                        style={{ color: "#000000" }}
+                {/* Mobile Navigation (menu items) */}
+                <div
+                  className={`lg:hidden ${open ? "flex" : "hidden"} flex-col items-center gap-4 p-4 bg-white`}
+                >
+                  <div className="flex flex-col gap-4">
+                    {Categories.map((link) => (
+                      <a
+                        key={link.name}
+                        href={link.href}
+                        className="text-gray-500 hover:text-gray-900"
                       >
-                        <li className="nav-item mx-2">
-                          <div
-                            onClick={() => navigate("/wishlist")}
-                            className="relative"
-                          >
-                            <BsHeart className="text-xl cursor-pointer" />
-                            <span
-                              className={`absolute top-0 right-0 inline-flex items-center justify-center px-2 py-1 text-xs font-bold leading-none ${
-                                wishlistItems.length === 0
-                              } rounded-full transform translate-x-1/2 -translate-y-1/2`}
-                            >
-                              {wishlistItems.length === 0
-                                ? "0"
-                                : wishlistItems.length}
-                            </span>
-                          </div>
-                        </li>
-                        <li className="nav-item mx-2">
-                          <div
-                            onClick={() => navigate("/cart")}
-                            className="relative"
-                          >
-                            <BsCart3 className="text-xl cursor-pointer" />
-                            <span
-                              className={`absolute top-0 right-0 inline-flex items-center justify-center px-2 py-1 text-xs font-bold leading-none ${
-                                cartItems.length === 0
-                                  ? "bg-red-600 text-white"
-                                  : "bg-red-600 text-red-100"
-                              } rounded-full transform translate-x-1/2 -translate-y-1/2`}
-                            >
-                              {cartItems.length === 0 ? "0" : uniqueItemsCount}
-                            </span>
-                          </div>
-                        </li>
-                      </ul>
+                        {link.name}
+                      </a>
+                    ))}
+                  </div>
+
+                  {/* Account and Cart (Mobile) */}
+                  <div className="flex items-center justify-between w-full gap-6">
+                    <a
+                      href="/profile"
+                      className="text-gray-400 hover:text-gray-500"
+                    >
+                      <UserIcon aria-hidden="true" className="h-6 w-6" />
+                    </a>
+                    <div className="relative">
+                      <BsCart3 className="text-xl cursor-pointer" />
+                      <span
+                        className={`absolute top-0 right-0 inline-flex items-center justify-center px-2 py-1 text-xs font-bold leading-none ${cartItems.length === 0
+                            ? "bg-red-600 text-white"
+                            : "bg-red-600 text-red-100"
+                          } rounded-full transform translate-x-1/2 -translate-y-1/2`}
+                      >
+                        {cartItems.length === 0 ? "0" : uniqueItemsCount}
+                      </span>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
           </div>
+
         </nav>
       </header>
     </div>

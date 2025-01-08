@@ -12,9 +12,11 @@ import Waterproof from '../../assets/images/cementImages/waterProof.jpg';
 import EngineeringBrick from '../../assets/images/cementImages/engineering-bricks-178 (1).jpg';
 import ConstructionSand from '../../assets/images/sandImages/constractionsand.jpg';
 import Steel from '../../assets/images/steelrods.jpg'
-
+import Gold7Image from '../../assets/gold_images/7.jpg';
+import GoldBangle from '../../assets/gold_images/4.jpg';
+import GoldBracelet from '../../assets/gold_images/6.jpg';
+import GoldPendant from '../../assets/gold_images/5.jpg';
 const images = [image1, image2, image3];
-
 // Sample data for construction materials
 const constructionData = [
   {
@@ -56,26 +58,34 @@ const goldData = [
   {
     id: 1,
     name: "Gold Necklace",
-    image: "https://via.placeholder.com/150", // Replace with actual image path
+    image: Gold7Image, // Replace with actual image path
     discountedPrice: 50000,
     originalPrice: 55000,
     discount: "9% Off",
   },
   {
     id: 2,
-    name: "Gold Ring",
-    image: "https://via.placeholder.com/150", // Replace with actual image path
+    name: "Gold Bangle Set",
+    image: GoldBangle, // Replace with actual image path
     discountedPrice: 10000,
     originalPrice: 11000,
     discount: "8% Off",
   },
   {
     id: 3,
-    name: "Gold Earrings",
-    image: "https://via.placeholder.com/150", // Replace with actual image path
+    name: "Gold Bracelet",
+    image: GoldBracelet, // Replace with actual image path
     discountedPrice: 20000,
     originalPrice: 22000,
     discount: "10% Off",
+  },
+  {
+    id: 4,
+    name: "Gold Pendant with Ruby",
+    image: GoldPendant, // Replace with actual image path
+    discountedPrice: 20000,
+    originalPrice: 42000,
+    discount: "20% Off",
   },
 ];
 

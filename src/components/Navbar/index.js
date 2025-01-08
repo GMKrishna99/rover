@@ -15,13 +15,7 @@ const Navbar = () => {
   const [navbarTextColor, setNavbarTextColor] = useState("#000000");
   const [showLoginModal, setShowLoginModal] = useState(false); // State for showing login modal
   const navigate = useNavigate();
-  // const [cartItem, setCartItems] = useState([]);
   const { cartItems } = useContext(CartContext);
-
-  // useEffect(() => {
-  //   const cart = JSON.parse(localStorage.getItem('cart')) || [];
-  //   setCartItems(cart);
-  // }, []);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -106,12 +100,12 @@ const Navbar = () => {
           </li>
           <li className="nav-item w-full ml-6 mr-6" style={{ width: "200px" }}>
             <div onClick={openLoginModal}>
-              <span class="inline ">Login | Signup</span>
+              <span className="inline">Login | Signup</span>
             </div>
           </li>
-          <li></li>
         </ul>
       </nav>
+
       {/* Login Modal */}
       {showLoginModal && <Login onClose={closeLoginModal} />}
     </>
@@ -119,3 +113,4 @@ const Navbar = () => {
 };
 
 export default Navbar;
+
