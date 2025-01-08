@@ -799,7 +799,7 @@ const ProductCarousel = () => {
   return (
     <div className="container mx-auto p-10">
       <h1 className="text-4xl font-extrabold text-center text-black mt-8 mb-4">
-        BIG SAVING ZONE
+      CONSTRUCTION ZONE
       </h1>
       <h1 className="text-4xl font-normal text-center text-black mb-4">
         EVERYDAY CASUAL
