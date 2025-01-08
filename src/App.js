@@ -24,6 +24,9 @@ import Profile from "./components/Order/profile";
 import GroceryPage from "./components/grocery/index"; // Make sure the path is correct
 import Clothing from "./components/clothing/Clothing/Clothing";
 import GroceryDetail from "./components/grocery/GroceryDetail";
+import GoldList from './Gold/Goldlist';
+import GoldDetails from './Gold/GoldDetails';
+import GoldHome from './components/Home/GoldHome';
 
 const ScrollToTop = () => {
   const location = useLocation();
@@ -102,6 +105,9 @@ function App() {
           />
           <Route path="/groceries" element={<GroceryPage />} />
           <Route path="/groceries/:id" element={<GroceryDetail />} />
+<Route exact path="/gold" element={<GoldHome onAddToCart={handleAddToCart}/>} />
+<Route path="/gold-list" element={<GoldList />} />
+ <Route path="/gold/:goldId" element={<GoldDetails onAddToCart={handleAddToCart}/>} />
         </Routes>
         <Footer />
       </Router>
