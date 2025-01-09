@@ -34,6 +34,10 @@ import SandListPage from './components/Pages/sandList';
 import BricksDetailsPage from './components/Pages/bricksdetails';
 import SandDetailsPage from './components/Pages/sandDetails';
 import ConstractionHome from '../src/components/constructionHome/Home'
+import SoftDrinkListPage from "./components/SoftDrinks/softdrinklist";
+import FoodListPage from './components/food/food';
+import FoodDetailsPage from "./components/food/fooddetails";
+import SoftDrinksDetailsPage from "./components/SoftDrinks/softdrinDetails";
 
 const ScrollToTop = () => {
   const location = useLocation();
@@ -125,6 +129,11 @@ function App() {
           <Route path="/sand/:id" element={<SandDetailsPage />} />
           <Route path="/category/:gender/:type/:subtype" element={<NavbarCategory />} />
           <Route path="/cement/:id" element={<CementDetailsPage />} />
+          <Route path="/softDrinks" element={<SoftDrinkListPage />} />
+          <Route path="/Food" element={<FoodListPage />} />
+          <Route path="/foods/:id" element={<FoodDetailsPage />} />
+          <Route path="/softdrinks/:id" element={<SoftDrinksDetailsPage />} />
+
         </Routes>
         <Footer />
       </Router>
