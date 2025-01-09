@@ -27,7 +27,7 @@ const currencies = ["INR", "USD", "AUD", "EUR", "GBP"];
 const Categories = [
   { name: "Clothing", href: "/clothing" },
   { name: "Construction Material", href: "/construction-material" },
-  { name: "Gold", href: "/gold" },
+  { name: "Jewellery", href: "/gold" },
   { name: "Groceries", href: "/groceries" },
 ];
 

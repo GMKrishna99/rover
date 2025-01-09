@@ -231,7 +231,7 @@ const Home = () => {
         </div>
 
         {/* Gold Heading */}
-        <h1 className="mx-auto py-6 text-4xl font-semibold">Gold</h1>
+        <h1 className="mx-auto py-6 text-4xl font-semibold">Jewellery</h1>
 
         {/* Gold Section */}
         <div className="flex gap-2 overflow-x-auto hide-scrollbar scrolling-touch">

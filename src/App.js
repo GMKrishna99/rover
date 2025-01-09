@@ -25,6 +25,8 @@ import GroceryPage from "./components/grocery/index"; // Make sure the path is c
 import Clothing from "./components/clothing/Clothing/Clothing";
 import GroceryDetail from "./components/grocery/GroceryDetail";
 import GoldList from './Gold/Goldlist';
+import SilverList from './Gold/Silverlist';
+import DiamondList from './Gold/Diamondlist';
 import GoldDetails from './Gold/GoldDetails';
 import GoldHome from './components/Home/GoldHome';
 import CementListPage from './components/Pages/cementList';
@@ -33,7 +35,14 @@ import BrickListPage from './components/Pages/bricksList';
 import SandListPage from './components/Pages/sandList';
 import BricksDetailsPage from './components/Pages/bricksdetails';
 import SandDetailsPage from './components/Pages/sandDetails';
-import ConstractionHome from '../src/components/constructionHome/Home'
+import ConstractionHome from '../src/components/constructionHome/Home';
+import EarringsList from './Gold/Earringslist';
+import RoldGold from './Gold/RoldGold';
+import FruitsvegetablesList from './components/grocery/veg-fruitslist';
+import BakeryList from './components/grocery/Bakery';
+import HouseholdList from './components/grocery/Household';
+import HealthList from './components/grocery/Healthlist';
+
 
 const ScrollToTop = () => {
   const location = useLocation();
@@ -113,6 +122,16 @@ function App() {
           <Route path="/groceries" element={<GroceryPage />} />
           <Route path="/groceries/:id" element={<GroceryDetail />} />
           <Route exact path="/gold" element={<GoldHome onAddToCart={handleAddToCart} />} />
+
+          <Route path="/fruits-vegetables" element={<FruitsvegetablesList />} />
+          <Route path="/dairy-bakery" element={<BakeryList />} />
+          <Route path="/household-supplies" element={<HouseholdList />} />
+          <Route path="/health-wellness" element={<HealthList />} />
+          <Route exact path="/rold-gold" element={<RoldGold onAddToCart={handleAddToCart} />} />
+          <Route path="/silver-list" element={<SilverList />} />
+          <Route path="/diamond-list" element={<DiamondList />} />
+          <Route path="/earrings-list" element={<EarringsList />} />
+
           <Route path="/gold-list" element={<GoldList />} />
           <Route path="/gold/:goldId" element={<GoldDetails onAddToCart={handleAddToCart} />} />
           <Route path="/construction-material" element={<ConstractionHome />} />
