@@ -1,10 +1,13 @@
-import React, { useRef } from "react";
-import Slider from "react-slick";
+import React, { useRef,useState } from "react";
 import { useNavigate } from "react-router-dom"; // Import for navigation
 import { groceryData } from "../constants/index";
 import { FaArrowRight, FaArrowLeft } from "react-icons/fa";
 
-// Importing images
+// Importing imagesimport React, { useState } from "react";
+import { Link } from "react-router-dom"; // Import Link for navigation
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 import image1 from "../../assets/home_banner/WhatsApp Image 2025-01-08 at 15.29.49_44be3ee5.jpg";
 import image2 from "../../assets/home_banner/WhatsApp Image 2025-01-08 at 15.33.26_e5075cc5.jpg";
 import image3 from "../../assets/home_banner/WhatsApp Image 2025-01-08 at 16.09.49_776a7a4f.jpg";
@@ -92,7 +95,23 @@ const goldData = [
 const Home = () => {
   const navigate = useNavigate(); // Hook for navigation
   const scrollRef = useRef(null);
+  const [selectedCategory, setSelectedCategory] = useState("All");
 
+  const imageCarouselSettings = {
+    dots: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    autoplay: true,
+    autoplaySpeed: 1500,
+    pauseOnHover: true,
+  };
+
+  const filteredItems =
+    selectedCategory === "All"
+      ? groceryData
+      : groceryData.filter((item) => item.category === selectedCategory);
   // Carousel settings
   const settings = {
     dots: true,
@@ -167,7 +186,7 @@ const Home = () => {
 
   return (
     <div className="pt-34">
-      {/* Carousel */}
+      {/* Carousel
       <div className="w-full h-[800px] overflow-hidden">
         <Slider {...settings}>
           {images.map((image, index) => (
@@ -179,6 +198,25 @@ const Home = () => {
               />
             </div>
           ))}
+        </Slider>
+      </div> */}
+      <div className="mb-8">
+        <Slider {...imageCarouselSettings}>
+          <img
+            src={image1}
+            alt="Promo 1"
+            className="w-full h-[300px] sm:h-[400px] md:h-[500px] lg:h-[600px] object-cover rounded-lg"
+          />
+          <img
+            src={image2}
+            alt="Promo 2"
+            className="w-full h-[300px] sm:h-[400px] md:h-[500px] lg:h-[600px] object-cover rounded-lg"
+          />
+          <img
+            src={image3}
+            alt="Promo 3"
+            className="w-full h-[300px] sm:h-[400px] md:h-[500px] lg:h-[600px] object-cover rounded-lg"
+          />
         </Slider>
       </div>
 
