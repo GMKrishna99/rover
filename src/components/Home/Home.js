@@ -19,6 +19,23 @@ import Gold7Image from '../../assets/gold_images/7.jpg';
 import GoldBangle from '../../assets/gold_images/4.jpg';
 import GoldBracelet from '../../assets/gold_images/6.jpg';
 import GoldPendant from '../../assets/gold_images/5.jpg';
+import Cola from '../../assets/images/softDrinks/cola.jpg';
+import Lemonade from '../../assets/images/softDrinks/Lemonade.jpg';
+import OrangeSoda from '../../assets/images/softDrinks/OrangeSoda.jpg';
+import GingerAle from '../../assets/images/softDrinks/GingerAle.jpg';
+import RootBeer from '../../assets/images/softDrinks/rootBear.jpg';
+import SparklingWater from '../../assets/images/softDrinks/SparklingWater.jpg';
+import tofu from '../../assets/images/food/tofu.jpg';
+
+import ItalianPizza from '../../assets/images/food/Italian Pizza.jpg'
+
+import Pancakes  from '../../assets/images/food/Pancakes.jpg'
+
+import Burgers from '../../assets/images/food/Burgers.jpg'
+import Wood from '../../assets/images/wood.jpg'
+import Superfoods from '../../assets/images/food/Superfoods.jpg'
+
+
 const images = [image1, image2, image3];
 // Sample data for construction materials
 const constructionData = [
@@ -50,6 +67,14 @@ const constructionData = [
     id: 3,
     name: "Steel Rods",
     image: Steel, // Replace with actual image path
+    discountedPrice: 700,
+    originalPrice: 1000,
+    discount: "12% Off",
+  },
+  {
+    id: 3,
+    name: "Wood",
+    image: Wood, // Replace with actual image path
     discountedPrice: 700,
     originalPrice: 1000,
     discount: "12% Off",
@@ -90,7 +115,105 @@ const goldData = [
     originalPrice: 42000,
     discount: "20% Off",
   },
+  
 ];
+const softDrinks=[
+  { 
+    id: 1, 
+    name: 'Cola', 
+    image: Cola, // Replace with actual image path 
+    discountedPrice: 50, 
+    originalPrice: 55, 
+    discount: '10% off'
+  },
+  { 
+    id: 2, 
+    name: 'Lemonade', 
+    image: Lemonade, // Replace with actual image path 
+    discountedPrice: 40, 
+    originalPrice: 47, 
+    discount: '15% off'
+  },
+  { 
+    id: 3, 
+    name: 'Orange Soda', 
+    image: OrangeSoda, // Replace with actual image path 
+    discountedPrice: 45, 
+    originalPrice: 50, 
+    discount: '5% off'
+  },
+  { 
+    id: 4, 
+    name: 'Ginger Ale', 
+    image: GingerAle, // Replace with actual image path 
+    discountedPrice: 60, 
+    originalPrice: 75, 
+    discount: '20% off'
+  },
+  { 
+    id: 5, 
+    name: 'Sparkling Water', 
+    image: SparklingWater, // Replace with actual image path 
+    discountedPrice: 60, 
+    originalPrice: 75, 
+    discount: '20% off'
+  }
+];
+const Food = [
+  { 
+    id: 1, 
+    name: 'Vegan & Vegetarian', 
+    price: '₹150', 
+    discount: '10% off', 
+    category: 'Vegan & Vegetarian', 
+    image: tofu, 
+    discountedPrice: 135, // ₹150 - 10% off 
+    originalPrice: 150 
+  },
+
+  { 
+    id: 6, 
+    name: 'Ethnic Foods', 
+    price: '₹500', 
+    discount: '10% off', 
+    category: 'Ethnic Foods', 
+    image: ItalianPizza, 
+    discountedPrice: 450, // ₹500 - 10% off 
+    originalPrice: 500 
+  },
+
+  { 
+    id: 11, 
+    name: 'Breakfast Foods', 
+    price: '₹180', 
+    discount: '10% off', 
+    category: 'Breakfast Foods', 
+    image: Pancakes, 
+    discountedPrice: 162, // ₹180 - 10% off 
+    originalPrice: 180 
+  },
+  { 
+    id: 16, 
+    name: 'Burgers', 
+    price: '₹250', 
+    discount: '10% off', 
+    category: 'Fast Food', 
+    image: Burgers, 
+    discountedPrice: 225, // ₹250 - 10% off 
+    originalPrice: 250 
+  },
+  { 
+    id: 20, 
+    name: 'Superfoods', 
+    price: '₹400', 
+    discount: '10% off', 
+    category: 'Health Foods', 
+    image: Superfoods, 
+    discountedPrice: 360, // ₹400 - 10% off 
+    originalPrice: 400 
+  },
+];
+
 
 const Home = () => {
   const navigate = useNavigate(); // Hook for navigation
@@ -147,7 +270,12 @@ const Home = () => {
       route = "/gold";
     } else if (category === "groceries") {
       route = "/groceries";
-    } else {
+    }  else if (category === "softDrinks") {
+      route = "/softDrinks";
+    } else if (category === "Food") {
+      route = "/food";
+    } 
+    else {
       const formattedName = product.name.toLowerCase().replace(/\s+/g, "-"); // Format name for URL
       route = `/product-list/${formattedName}`;
     }
@@ -242,6 +370,15 @@ const Home = () => {
         <h1 className="mx-auto py-6 text-4xl font-semibold">Groceries</h1>
         <div className="flex gap-2 overflow-x-auto hide-scrollbar scrolling-touch">
           {renderProductCards(groceryData, "groceries")}
+        </div>
+          {/* Groceries Section */}
+          <h1 className="mx-auto py-6 text-4xl font-semibold">Soft Drinks</h1>
+        <div className="flex gap-2 overflow-x-auto hide-scrollbar scrolling-touch">
+          {renderProductCards(softDrinks, "softDrinks")}
+        </div>
+        <h1 className="mx-auto py-6 text-4xl font-semibold">Food</h1>
+        <div className="flex gap-2 overflow-x-auto hide-scrollbar scrolling-touch">
+          {renderProductCards(Food, "Food")}
         </div>
       </div>
     </div>
